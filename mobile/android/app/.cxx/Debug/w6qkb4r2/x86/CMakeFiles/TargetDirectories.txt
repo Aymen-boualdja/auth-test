@@ -1,0 +1,2 @@
+C:/Users/ShiftTech/Desktop/Projet/auth-test/mobile/android/app/.cxx/Debug/w6qkb4r2/x86/CMakeFiles/edit_cache.dir
+C:/Users/ShiftTech/Desktop/Projet/auth-test/mobile/android/app/.cxx/Debug/w6qkb4r2/x86/CMakeFiles/rebuild_cache.dir
