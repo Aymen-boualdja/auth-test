@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kidergarten/pages/ParentProfile.dart';
-import 'package:kidergarten/pages/testpage.dart';
-import 'package:kidergarten/pages/welcome_page.dart';
 
 void main() {
   runApp(const MainApp());
