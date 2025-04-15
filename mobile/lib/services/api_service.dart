@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:kidergarten/global.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
@@ -61,12 +62,22 @@ class ApiService {
       final response = await http.get(
         url,
         headers: {'Content-Type': 'application/json'},
-        //body: jsonEncode({'id': id, 'name': name}), // ✅ Send as JSON body
       );
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         print('✅ Parent found: $data');
+
+        // Store globally
+        globalParentData = data;
+
+        // Optional: store persistently
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('parentData', jsonEncode(data));
+        data.forEach((key, value) {
+          print('$key: $value');
+        });
+
         return data;
       } else {
         final error = jsonDecode(response.body);
